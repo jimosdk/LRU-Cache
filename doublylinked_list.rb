@@ -34,6 +34,55 @@ class DoublyLinkedList
         @head
     end
 
+    def append_after(value,new_value)
+        link = find_link(value)
+        return nil if link.nil?
+        n = link.next_ptr
+        new_link = Link.new(new_value,link,n)
+        link.next_ptr = new_link
+
+        n.prev_ptr = new_link unless @tail == link
+        @tail = new_link if @tail == link
+
+        @size += 1
+        new_link
+    end
+
+
+    def delete_first
+        return nil if @size == 0
+        if @size == 1
+            link = @head
+            @head,@tail,@size = nil,nil,0 
+            return link
+        end
+
+        deleted = @head
+        n = @head.next_ptr
+        n.prev_ptr = nil 
+        @head = n
+
+        @size -= 1
+        deleted
+    end
+
+    def delete_last
+        return nil if @size == 0
+        if @size == 1
+            link = @tail
+            @head,@tail,@size = nil,nil,0 
+            return link
+        end
+
+        deleted = @tail
+        prev = @tail.prev_ptr
+        prev.next_ptr = nil 
+        @tail = prev
+
+        @size -= 1
+        deleted
+    end
+
     def delete(value)
         link = find_link(value)
         return nil if link.nil?
@@ -51,19 +100,7 @@ class DoublyLinkedList
         link
     end
 
-    def append_after(value,new_value)
-        link = find_link(value)
-        return nil if link.nil?
-        n = link.next_ptr
-        new_link = Link.new(new_value,link,n)
-        link.next_ptr = new_link
-
-        n.prev_ptr = new_link unless @tail == link
-        @tail = new_link if @tail == link
-
-        @size += 1
-        new_link
-    end
+    
 
     def empty?
         @size == 0
