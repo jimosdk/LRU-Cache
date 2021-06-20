@@ -1,4 +1,3 @@
-require 'byebug'
 require_relative 'link'
 class DoublyLinkedList
     attr_reader :size,:head,:tail

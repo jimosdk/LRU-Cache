@@ -1,5 +1,4 @@
-require_relative 'doublylinkedlist'
-require 'byebug'
+require_relative 'doubly_linked_list/doublylinkedlist'
 
 class MyHashMap
     attr_accessor :store,:size,:number_of_items

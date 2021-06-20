@@ -1,4 +1,4 @@
-require 'byebug'
+
 
 class Link
     attr_accessor :value ,:next_ptr,:prev_ptr

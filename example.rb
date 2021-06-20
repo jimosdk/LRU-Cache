@@ -1,7 +1,4 @@
-require_relative 'lru_cache'
-require 'byebug'
-
-
+require_relative 'lru_cache/lru_cache'
 
 # Your task for this problem is to take a sequence of data accesses 
 #and simulate an LRU cache. When requested, you will output the 
@@ -51,15 +48,6 @@ require 'byebug'
 #                               WXY
 #                               Simulation 3
 #                               EIO
-
-
-
-
-
-
-
-
-
 
 
 size = nil

@@ -1,6 +1,5 @@
-require_relative 'doublylinkedlist'
+require_relative 'doubly_linked_list/doublylinkedlist'
 require_relative 'hashmap'
-require 'byebug'
 
 class LruCache
     attr_accessor :hash,:list,:size
